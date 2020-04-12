@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Toko extends Model
 {
     //
-    protected $table='penjual';
-    protected $primaryKey='id_penjual';
-    protected $fillabe=['id_penjual','nama','alamat','no_hp'];
+    protected $table='db_kelontong';
+    protected $primaryKey='kode_penjual';
+    protected $fillable=['db_kelontong','id_penjual','nama','alamat','no_hp'];
 }
