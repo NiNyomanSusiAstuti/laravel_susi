@@ -4,9 +4,18 @@ namespace App\Http\Controllers;
 
 use App\toko;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class TokoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function($request, $next){
+            if(Gate::allows('admin'))return $next($request);
+            abort(403, 'Anda Tidak memiliki hak akses');
+        });
+    }
     /**
      * Display a listing of the resource.
      *

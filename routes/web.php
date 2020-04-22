@@ -14,4 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::resource('toko', 'TokoController');
+Auth::routes();
+Route::get('/home', 'TokoController@index')->name('home');
+
+
+Route::resource('ppl', 'PplController');
+Auth::routes();
+Route::get('/ppl', 'PplController@index')->name('home');
+
+
